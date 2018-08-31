@@ -1,0 +1,44 @@
+﻿<html>
+	<head>
+		<hta:application id=hta_id3
+		applicationName=hta_name3
+		showInTaskBar=no
+		caption=no
+		innerBorder=no
+		selection=no
+		scroll=no
+		contextmenu=no
+		singleInstance=yes
+		BORDER=none
+		NAVIGABLE=yes
+		/>
+		<title>Расписание</title>
+		<script language=javascript>
+			var winWidth=304; // ширина окна
+			var winHeight=322; // высота окна
+			// изменяем размер
+			window.resizeTo(winWidth, winHeight);
+			// окно в центр экрана
+			var winPosX=screen.width-winWidth;
+			var winPosY=screen.Height-winHeight;
+			window.moveTo(winPosX, winPosY);
+			function fresh() {
+			location.reload();
+			}
+			//обновляем страницу раз в 15 мин 
+			setInterval(fresh,15*60*1000);
+		</script>
+	</head>
+	<body bgcolor=buttonface text=buttontext
+	style="padding: 2px;">
+		<iframe  APPLICATION="no" src="https://widget/calendar.php" 
+		style="border-width:0" width="304" height="322" frameborder="0" scrolling="no">Загрузка</iframe>
+		<style>* {
+    margin: 0;
+}
+body {
+    border: 2px solid #eee;border-top:0px;
+}
+</style>
+	</body>
+</html>
