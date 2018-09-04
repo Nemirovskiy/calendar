@@ -1,0 +1,98 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'MS Sans Serif', Geneva, sans-serif;
+}
+body {
+	border: 2px solid #eee;
+}
+.header {
+	width: 100%;
+	position: relative;
+}
+.header__right, .header__left {
+	position: absolute;
+	bottom: 0;
+}
+.header__center {
+
+}
+.header__left{
+	left: 5px;
+	bottom: 15px;
+}
+.header__right{
+	right: 5px;
+}
+.date{
+	font-size: 25px;
+	font-weight: bolder;
+}
+.date__number {
+	font-size: 1.3em;
+}
+.date__name {
+	font-weight: normal;
+}
+.moon__image, .moon__text{
+	width: 70px;
+	height: 70px;
+}
+.moon__text {
+	text-align: center;
+	font-size: 20px;
+	align-content: center;
+	color: blue;
+	display: none;
+}
+.weather, .weather__border{
+	width: 80px;
+	height: 80px;    margin: 10px 0px;
+}
+.weather__border{
+	background: url('quadr.png') 0 0;
+	margin:0;
+}
+.calendar {
+	border-spacing: 0;
+	width: 100%;
+	border: none;
+	border-collapse: collapse;
+}
+.calendar__day {
+	padding: 2px;width: 40px;
+}
+.calendar__today {
+
+	padding: 0px;
+}
+.calendar__day__today {
+	border: 6px solid #02e002;
+	margin: -6px;
+}
+.calendar__aftermon {
+	background: #ccc;
+	color: #fff;
+}
+.calendar__day__active {
+	background: red;
+}
+.calendar__aftermon .calendar__day__active, .calendar__beforemon .calendar__day__active {
+	background: #f99;
+}
+.calendar__beforemon {
+	background: #f5f5f5;
+	color: #9a9a9a;
+}
+.block{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	background: #eee url('load.gif') center center no-repeat;
+	justify-content: center;
+	align-items: center;
+	z-index: 99999;
+}
