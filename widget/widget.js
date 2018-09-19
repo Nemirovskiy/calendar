@@ -228,8 +228,7 @@ function createDateBox(parent,name){
     var dayName = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
     var date = new Date();
     var dateBox = newElem(parent,'header__center '+name);
-    if(watch === null)
-        watch   = newElem(dateBox, name + '__watch');
+    watch   = newElem(dateBox, name + '__watch');
     digitalWatch();
     var params = {
         'number':date.getDate(),
