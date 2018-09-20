@@ -1,6 +1,6 @@
 ﻿'use strict';
 var winWidth = 305; // ширина окна
-var winHeight = 310; // высота окна
+var winHeight = 328; // высота окна
 // изменяем размер
 window.resizeTo(winWidth, winHeight);
 
@@ -188,6 +188,7 @@ function moonBox(box,moonDay){
     var img  = newElem(box,'moon__image','','img');
     var text = newElem(box,'moon__text');
     img.src =  server + 'img/moon' + moonDay + '.png';
+    img.alt =  moonDay + ' лунный день';
     text.innerText = moonDay + ' лунный день';
     box.onmouseover = function () {
         img.style.display = 'none';
@@ -267,8 +268,6 @@ function createCalendar(parent,events){
         }
         if(month !== date.getMonth())
             selector += " calendar__day__other";
-        var item = newElem(main,'calendar__day' + selector);
-        selector = '';
         if(events.indexOf(dateToEvent) > -1){
             if(month === date.getMonth())
                 selector += " calendar__day__active";
@@ -277,7 +276,7 @@ function createCalendar(parent,events){
         }
         if(date.getDate() === today && month === date.getMonth())
             selector += " calendar__day__today";
-        newElem(item,selector,date.getDate());
+        newElem(main,'calendar__day' + selector,date.getDate());
     }
 }
 

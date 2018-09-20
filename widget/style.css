@@ -4,7 +4,9 @@
 	text-align: center;
 	font-family: 'MS Sans Serif', Geneva, sans-serif;
 }
-body {
+.content {
+	width: 301px;
+	margin: auto;
 	border: 2px solid #eee;
 }
 .header {
@@ -62,30 +64,32 @@ body {
 	background: url('quadr.png') 0 0;
 	margin:0;
 }
+.name{
+	height: 1.4em;
+}
 .calendar {
-	border-spacing: 0;
 	width: 100%;
-	border: none;
-	border-collapse: collapse;
+	height: 8.8em;
 }
 .calendar__day {
-	width: 43px;
+	width: 39px;
 	float: left;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	line-height: 1.2em;
+	padding: 2px 0;
+	height: 1.2em;
+	border: 2px #fff solid;
 }
 .calendar__day__weekend {
     font-weight: bold;
 }
 .calendar__day__today {
 	border: 6px solid #02e002;
-	margin: -6px;
 	position: relative;
+	margin: -4px;
 }
 .calendar__day__other {
 	background: #f5f5f5;
     color: #9a9a9a;
+	border-color: #f5f5f5;
 }
 .calendar__day__active {
 	background: red;
