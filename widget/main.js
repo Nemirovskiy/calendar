@@ -187,7 +187,7 @@ function weatherBox(parent) {
 function moonBox(box,moonDay){
     var img  = newElem(box,'moon__image','','img');
     var text = newElem(box,'moon__text');
-    img.src =  server + 'img/moon' + moonDay + '.png';
+    img.src =  server + 'img/moon' + parseInt(moonDay) + '.png';
     img.alt =  moonDay + ' лунный день';
     text.innerText = moonDay + ' лунный день';
     box.onmouseover = function () {
