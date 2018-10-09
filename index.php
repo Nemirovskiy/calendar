@@ -8,7 +8,7 @@ if(!empty($_GET['code'])):
         $file = file_get_contents($urlMoon);
         preg_match("#\/([\d]{1,2})\.png#s", $file, $moon);
         $file = file_get_contents($urlEvents);
-        preg_match_all("#START:(\d+)#s",$file,$events);
+        preg_match_all("#START\D+:(\d+)#s",$file,$events);
         echo "moon".$moon[1]." ".join(" ",$events[1]);
     }
     else
