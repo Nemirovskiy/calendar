@@ -1,4 +1,4 @@
-* {
+﻿* {
 	margin: 0;
 	padding: 0;
 	text-align: center;
@@ -53,13 +53,14 @@
 	display: none;
 }
 .weather, .weather__border{
-	width: 80px;
-	height: 80px;    margin: 10px 0px;
+	width: 115px;
+	height: 50px;
+	margin: 50px 0;
 }
 .weather{
 	background-color: #ececec;
-	background-position: 6px -6px;
-    background-size: cover;
+	background-position: -2px 110px;
+	background-size: cover;
 }
 .weather__border{
 	background: url('quadr.png') 0 0;

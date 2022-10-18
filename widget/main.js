@@ -8,7 +8,7 @@ window.resizeTo(winWidth, winHeight);
 window.moveTo(screen.width - winWidth, screen.Height - winHeight);
 
 var server = "https://tech.nemin.ru/widget/";// адрес сервера
-var codeCalendar = 'e3sueck4k';		// код получаемого календаря
+var codeCalendar = 'didbi4ns794IRINAdidbi4ns794';		// код получаемого календаря
 var status = 'offline'; 	// статус сети
 var reload = 15;        	// период обновления статуса
 var pingTimer;          	// таймер пинга сети
@@ -175,7 +175,7 @@ function weatherBox(parent) {
     var date = new Date();
     var weather = newElem(parent,'weather');
     newElem(weather,'weather__border');
-    weather.style.backgroundImage = 'url(https://info.weather.yandex.net/2/3.ru.png)';
+    weather.style.backgroundImage = 'url(https://info.weather.yandex.net/2/3.ru.png?t='+date.getTime()+')';
     weather.title = 'Погода: \n'+date.getHours() + ':' + upZero(date.getMinutes()) + ':' + upZero(date.getSeconds());
 }
 
