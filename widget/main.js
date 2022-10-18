@@ -176,7 +176,7 @@ function weatherBox(parent) {
     var weather = newElem(parent,'weather');
     newElem(weather,'weather__border');
     weather.style.backgroundImage = 'url(https://info.weather.yandex.net/2/3.ru.png)';
-    weather.title = 'Погода: \n'+date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+    weather.title = 'Погода: \n'+date.getHours() + ':' + upZero(date.getMinutes()) + ':' + upZero(date.getSeconds());
 }
 
 /**

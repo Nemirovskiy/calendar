@@ -1,4 +1,4 @@
-﻿* {
+* {
 	margin: 0;
 	padding: 0;
 	text-align: center;
@@ -58,7 +58,8 @@
 }
 .weather{
 	background-color: #ececec;
-	background-position: -19px -32px;
+	background-position: 6px -6px;
+    background-size: cover;
 }
 .weather__border{
 	background: url('quadr.png') 0 0;
