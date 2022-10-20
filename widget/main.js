@@ -8,7 +8,7 @@ window.resizeTo(winWidth, winHeight);
 window.moveTo(screen.width - winWidth, screen.Height - winHeight);
 
 var server = "https://tech.nemin.ru/widget/";// адрес сервера
-var codeCalendar = 'didbi4ns794IRINAdidbi4ns794';		// код получаемого календаря
+var codeCalendar = 'e3sueck4k';		// код получаемого календаря
 var status = 'offline'; 	// статус сети
 var reload = 15;        	// период обновления статуса
 var pingTimer;          	// таймер пинга сети
@@ -167,29 +167,43 @@ function digitalWatch() {
     setTimeout(digitalWatch, 1000);
 }
 
+function formatTemp(temp) {
+    if(temp > 0) {
+        temp = "+" + temp;
+    }
+    return "" + temp +"&deg;";
+}
+
 /**
  * размещение погодного блока
  * @param parent
+ * @param data
  */
-function weatherBox(parent) {
+function weatherBox(parent,data) {
     var date = new Date();
+    var weatherData = data.split('|');
     var weather = newElem(parent,'weather');
-    newElem(weather,'weather__border');
-    weather.style.backgroundImage = 'url(https://info.weather.yandex.net/2/3.ru.png?t='+date.getTime()+')';
+    var temp = newElem(weather,'weather__temp');
+    var img = newElem(weather,'weather__img','','img');
+    var delta = newElem(weather,'weather__delta');
+    temp.innerHTML = formatTemp(weatherData[1]);
+    delta.innerHTML = formatTemp(weatherData[2]) + '...' + formatTemp(weatherData[3]);
+    img.src = 'https://yastatic.net/weather/i/icons/islands/48/'+ weatherData[4] +'.png';
     weather.title = 'Погода: \n'+date.getHours() + ':' + upZero(date.getMinutes()) + ':' + upZero(date.getSeconds());
 }
 
 /**
  * размещение блока луны
  * @param box
- * @param moonDay
+ * @param data
  */
-function moonBox(box,moonDay){
+function moonBox(box,data){
+    var arData = data.split('|');
     var img  = newElem(box,'moon__image','','img');
     var text = newElem(box,'moon__text');
-    img.src =  server + 'img/moon' + parseInt(moonDay) + '.png';
-    img.alt =  moonDay + ' лунный день';
-    text.innerText = moonDay + ' лунный день';
+    img.src =  server + 'img/moon_' + arData[5] + '.png';
+    img.alt =  arData[5];
+    text.innerText = arData[6];
     box.onmouseover = function () {
         img.style.display = 'none';
         text.style.display = 'block';
@@ -293,8 +307,8 @@ function createWidget(events) {
         content.id = 'content';
     }
     var header  = newElem(content,'header');
-    moonBox(newElem(header, 'header__left'),events.substr(4,2));
-    weatherBox(newElem(header, 'header__right'));
+    moonBox(newElem(header, 'header__left'),events);
+    weatherBox(newElem(header, 'header__right'),events);
     createDateBox(header,'date');
     createCalendar(content,events);
 }

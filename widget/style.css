@@ -15,14 +15,15 @@
 }
 .header__right, .header__left {
 	position: absolute;
-	bottom: 0;
+	bottom: 15px;
 }
 .header__center {
 
 }
 .header__left{
-	left: 5px;
-	bottom: 15px;
+	left: 0;
+	width: 80px;
+	height: 80px;
 }
 .header__right{
 	right: 5px;
@@ -41,30 +42,29 @@
 .date__name {
 	font-weight: normal;
 }
-.moon__image, .moon__text{
-	width: 70px;
-	height: 70px;
+.moon__image {
+	width: 100%;
 }
 .moon__text {
 	text-align: center;
-	font-size: 20px;
+	font-size: 14px;
 	align-content: center;
 	color: blue;
 	display: none;
-}
-.weather, .weather__border{
-	width: 115px;
-	height: 50px;
-	margin: 50px 0;
+	line-height: 1.7em;
+	padding: 15px 0 0 10px;
 }
 .weather{
-	background-color: #ececec;
-	background-position: -2px 110px;
-	background-size: cover;
+	font-weight: bold;
 }
-.weather__border{
-	background: url('quadr.png') 0 0;
-	margin:0;
+.weather__temp {
+	font-size: 1.4em;
+	line-height: 0.8em;
+	text-align: right;
+}
+
+.weather__delta {
+	font-size: 0.9em;
 }
 .name{
 	height: 1.4em;
@@ -74,7 +74,8 @@
 	height: 8.8em;
 }
 .calendar__day {
-	width: 39px;
+	width: 41px;
+	max-width: 12.957%;
 	float: left;
 	padding: 2px 0;
 	height: 1.2em;
